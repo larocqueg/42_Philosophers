@@ -21,8 +21,20 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-typedef
+typedef struct	s_philo
+{
+	int		id;
+	long	number_of_philos;
+	long	time_to_die;
+	long	time_to_eat;
+	long	time_to_sleep;
+	long	eat_times;
+}	t_philo;
+
 //utils.c
-int	ft_atoi(char *str);
+int		is_digit(char c);
+int		is_space(char c);
+int		ft_is_valid(char *str);
+long	ft_atol(char *str);
 
 #endif
