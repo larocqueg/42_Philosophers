@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	if (ac == 3 || ac == 5)
+	if (ac == 4 || ac == 5)
 	{
 		printf("Ok\n");
 		return (0);
