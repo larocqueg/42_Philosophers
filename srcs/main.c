@@ -12,11 +12,37 @@
 
 #include "../includes/philo.h"
 
+static void	ft_complete_lst(t_philo *philos, char **av, int i)
+{
+	if (i == 5)
+		philos->eat_quant = ft_atol(av[i--]);
+	philos->sleep_time = ft_atol(av[i--]);
+	philos->eat_time = ft_atol(av[i--]);
+	philos->die_time = ft_atol(av[i--]);
+	philos->philos_count = ft_atol(av[i]);
+}
+
 int	main(int ac, char **av)
 {
+	int	i;
+	int	valid;
+	t_philo	philos;
+
 	if (ac == 4 || ac == 5)
 	{
-		printf("Ok\n");
+		i = 1;
+		valid = 1;
+		while (av[i])
+		{
+			if (!ft_is_valid(av[i++]))
+				return (printf("%s", INVALID_ARG), 1);
+		}
+		ft_complete_lst(&philos, av, i);
+		printf("eat quant = %ld\n", philos.eat_quant);
+		printf("eat time = %ld\n", philos.eat_time);
+		printf("sleep time = %ld\n", philos.sleep_time);
+		printf("die time = %ld\n", philos.die_time);
+		printf("philos count = %ld\n", philos.philos_count);
 		return (0);
 	}
 	printf("Usage: $> ./philo \"number of philosofers\" \"time to die\" ");

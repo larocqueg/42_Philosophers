@@ -21,20 +21,23 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	int		id;
-	long	number_of_philos;
-	long	time_to_die;
-	long	time_to_eat;
-	long	time_to_sleep;
-	long	eat_times;
+	long	philos_count;
+	long	die_time;
+	long	eat_time;
+	long	sleep_time;
+	long	eat_quant;
 }	t_philo;
 
 //utils.c
 int		is_digit(char c);
 int		is_space(char c);
 int		ft_is_valid(char *str);
+int		ft_strlen(char *str);
 long	ft_atol(char *str);
+
+# define INVALID_ARG "Only numeric arguments are allowed!\n"
 
 #endif
