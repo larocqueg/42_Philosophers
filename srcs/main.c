@@ -27,23 +27,38 @@ static int	check_limits(t_philo *philos)
 	return (1);
 }
 
-static int	check_len(char **av, int i)
+static int	check_len(char *str)
 {
-	while (i >= 1)
-	{
-		if (ft_strlen(av[i]) > 19 && is_digit(av[i][0]))
-			return (0);
-		else if (ft_strlen(av[i]) > 20 && (av[i][0] == '-' || av[i][0] == '+'))
-				return (0);
-		i--;
-	}
+	int		i;
+	int		j;
+	char	sig;
+
+	i = 0;
+	sig = '\0';
+	while (is_space(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		sig = str[i++];
+	j = i;
+	while (is_digit(str[i]))
+		i++;
+	if (sig == '-' && (i - j > 20))
+		return (0);
+	else if ((!sig || sig == '+') && (i - j) > 19)
+		return (0);
 	return (1);
 }
 
 static int	ft_complete_lst(t_philo *philos, char **av, int i)
 {
-	if (!check_len(av, i))
-		return (0);
+	int	j;
+
+	j = i;
+	while (j >= 1)
+	{
+		if (!check_len(av[j--]))
+			return (0);
+	}
 	if (i == 5)
 		philos->eat_quant = ft_atol(av[i--]);
 	else

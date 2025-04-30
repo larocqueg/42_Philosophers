@@ -42,7 +42,6 @@ int		is_digit(char c);
 int		is_space(char c);
 int		ft_is_valid(char *str);
 
-
 # define INVALID_ARG "Only numeric arguments are allowed!\n"
 # define ARG_1       "Usage: $> ./philo \"number of philosofers\" "
 # define ARG_2       "\"time to die\" \"time to eat\" \"time to sleep\" "

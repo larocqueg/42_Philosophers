@@ -33,10 +33,6 @@ long	ft_atol(char *str)
 			sig = -1;
 		i++;
 	}
-	if (ft_strlen(str + i) > 20 && sig == -1)
-		return (-2147483648);
-	if (ft_strlen(str + i) > 19 && sig == 1)
-		return (2147483647);
 	while (is_digit(str[i]))
 	{
 		n = n * 10 + (str[i] - '0');

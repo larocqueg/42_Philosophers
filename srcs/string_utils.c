@@ -47,7 +47,7 @@ int	is_space(char c)
 
 int	is_digit(char c)
 {
-	if (c >= '0' && c<= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
@@ -59,6 +59,8 @@ int	ft_is_valid(char *str)
 	i = 0;
 	while (is_space(str[i]))
 		i++;
+	if (!str[i])
+		return (0);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (is_digit(str[i]))
