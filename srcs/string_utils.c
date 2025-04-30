@@ -65,6 +65,8 @@ int	ft_is_valid(char *str)
 		i++;
 	while (is_digit(str[i]))
 		i++;
+	while (is_space(str[i]))
+		i++;
 	if (str[i])
 		return (0);
 	return (1);
