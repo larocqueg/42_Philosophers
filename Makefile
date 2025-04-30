@@ -19,8 +19,8 @@ SRCS_DIR = ./srcs
 INCLUDES = ./includes/
 
 SRC= $(SRCS_DIR)/main.c \
-	 $(SRCS_DIR)/utils.c \
-	 $(SRCS_DIR)/string_utils.c \
+	 $(SRCS_DIR)/utils/utils.c \
+	 $(SRCS_DIR)/utils/string_utils.c \
 
 OBJS = $(SRC:.c=.o)
 
