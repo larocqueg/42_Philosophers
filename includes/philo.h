@@ -20,6 +20,7 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <pthread.h>
+# include <limits.h>
 
 typedef struct s_philo
 {
@@ -32,12 +33,20 @@ typedef struct s_philo
 }	t_philo;
 
 //utils.c
+long	ft_atol(char *str);
+
+//string_utils.c
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 int		is_digit(char c);
 int		is_space(char c);
 int		ft_is_valid(char *str);
-int		ft_strlen(char *str);
-long	ft_atol(char *str);
+
 
 # define INVALID_ARG "Only numeric arguments are allowed!\n"
+# define ARG_1       "Usage: $> ./philo \"number of philosofers\" "
+# define ARG_2       "\"time to die\" \"time to eat\" \"time to sleep\" "
+# define ARG_3       "\"number of times each philosofer must eat (optional)\"\n"
+# define LIMITS      "Only positive numbers within int limits are allowed!"
 
 #endif

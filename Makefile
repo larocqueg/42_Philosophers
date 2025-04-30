@@ -16,32 +16,36 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror -g
 
 SRCS_DIR = ./srcs
-INCLUDES = ./includes
+INCLUDES = ./includes/
 
 SRC= $(SRCS_DIR)/main.c \
 	 $(SRCS_DIR)/utils.c \
+	 $(SRCS_DIR)/string_utils.c \
 
 OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(FLAGS) -o $(NAME)
-	@echo "Compilation completed!\n"
+	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "Compilation completed!"
 
 $(SRCS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@$(CC) $(FLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean: $(OBJS)
 	@rm -rf $(OBJS)
-	@echo "Object files removed!\n"
+	@clear
+	@echo "Object files removed!"
 
 fclean: $(NAME) $(OBJS)
 	@rm -rf $(OBJS) $(NAME)
-	@echo "Object files & $(NAME) removed!\n"
+	@clear
+	@echo "Object files & $(NAME) removed!"
 
 re:fclean
 	@make all
-	@echo "Rebuild completed!\n"
+	@clear
+	@echo "Rebuild completed!"
 
 PHONY: all clean fclean re

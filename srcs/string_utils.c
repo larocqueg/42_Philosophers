@@ -24,6 +24,20 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	if (!s1 || !s2)
+		return (-1);
+	while (*s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (0);
+}
+
 int	is_space(char c)
 {
 	if (c == ' ' || c == '\t')
@@ -49,7 +63,7 @@ int	ft_is_valid(char *str)
 		i++;
 	while (is_digit(str[i]))
 		i++;
-	if (str[i] && !is_digit(str[i]))
+	if (str[i])
 		return (0);
 	return (1);
 }
