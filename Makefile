@@ -20,7 +20,9 @@ INCLUDES = ./includes/
 
 SRC= $(SRCS_DIR)/main.c \
 	 $(SRCS_DIR)/utils/utils.c \
+	 $(SRCS_DIR)/utils/parsing.c \
 	 $(SRCS_DIR)/utils/string_utils.c \
+
 
 OBJS = $(SRC:.c=.o)
 

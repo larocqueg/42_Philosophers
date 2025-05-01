@@ -25,6 +25,7 @@
 typedef struct s_philo
 {
 	int		id;
+	int		ac;
 	long	philos_count;
 	long	die_time;
 	long	eat_time;
@@ -41,6 +42,12 @@ int		ft_strcmp(char *s1, char *s2);
 int		is_digit(char c);
 int		is_space(char c);
 int		ft_is_valid(char *str);
+
+//parsing.c
+int		check_limits(t_philo *phi);
+int		check_len(char *str);
+int		ft_complete_lst(t_philo *philos, char **av, int i);
+void	print_philos(t_philo *philos);
 
 # define INVALID_ARG "Only numeric arguments are allowed!\n"
 # define ARG_1       "Usage: $> ./philo \"number of philosofers\" "
