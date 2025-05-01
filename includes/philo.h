@@ -22,16 +22,38 @@
 # include <pthread.h>
 # include <limits.h>
 
+typedef pthread_mutex_t	t_mtx;
+typedef struct s_table	t_table;
+
+typedef struct s_fork
+{
+	t_mtx	fork;
+	int		fork_id;
+}	t_fork;
+
 typedef struct s_philo
 {
-	int		id;
-	bool	six;
-	long	philos_count;
-	long	die_time;
-	long	eat_time;
-	long	sleep_time;
-	long	eat_quant;
+	int			id;
+	long		meal_counter; // counts the number of meals
+	long		philos_count; // number of philos on the table
+	long		die_time; // the time a philo dies if it doesn't eat
+	long		eat_time; // the time a philo has to wait to eat
+	long		sleep_time; // the time a philo has to sleep
+	long		eat_quant; // Max of 5
+	bool		six; // if ac == 6 six == true; else six == false
+	bool		full; // if six == true && eat_quant == 0; full == true
+	t_fork		*left_fork; // pointer to the left fork
+	t_fork		*right_fork; // pointer to the right fork
+	pthread_t	thread_id; // every philo is a thread and here is the thread id
 }	t_philo;
+
+typedef struct s_table
+{
+	bool		start; // true when the treads start
+	bool		end; // true when the threads end
+	t_fork		*forks;
+	t_philo		*philos;
+}	t_table;
 
 //utils.c
 long	ft_atol(char *str);

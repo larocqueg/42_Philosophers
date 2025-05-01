@@ -79,7 +79,7 @@ void	print_philos(t_philo *philos)
 	printf("die time = %ld\n", philos->die_time);
 	printf("eat time = %ld\n", philos->eat_time);
 	printf("sleep time = %ld\n", philos->sleep_time);
-	if (philos->six == true)
+	if (philos->six)
 		printf("eat quant = %ld\n", philos->eat_quant);
 	else
 		printf("eat quant not given\n");

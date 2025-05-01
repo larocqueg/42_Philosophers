@@ -15,23 +15,23 @@
 int	main(int ac, char **av)
 {
 	int		i;
-	t_philo	philos;
+	t_table	table;
 
 	if (ac == 5 || ac == 6)
 	{
 		if (ac == 6)
-			philos.six = true;
+			table.philos->six = true;
 		else
-			philos.six = false;
+			table.philos->six = false;
 		i = 0;
 		while (++i < ac)
 		{
 			if (!ft_is_valid(av[i]))
 				return (printf("%s", INVALID_ARG), 1);
 		}
-		if (!ft_complete_lst(&philos, av, ac - 1))
+		if (!ft_complete_lst(table.philos, av, ac - 1))
 			return (printf("%s\n", LIMITS), 1);
-		print_philos(&philos);
+		print_philos(table.philos);
 		return (0);
 	}
 	printf("%s%s%s", ARG_1, ARG_2, ARG_3);
