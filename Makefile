@@ -23,14 +23,20 @@ SRC= $(SRCS_DIR)/main.c \
 	 $(SRCS_DIR)/utils/parsing.c \
 	 $(SRCS_DIR)/utils/string_utils.c \
 
-
 OBJS = $(SRC:.c=.o)
+
+#Colors
+RED    = \033[38;5;196m
+GREEN  = \033[38;5;46m
+BLUE   = \033[38;5;33m
+ORANGE = \033[38;5;208m
+NC     = \033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
-	@echo "Compilation completed!"
+	@echo "$(GREEN)Compilation completed!$(NC)"
 
 $(SRCS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@$(CC) $(FLAGS) -I $(INCLUDES) -c $< -o $@
@@ -38,16 +44,17 @@ $(SRCS_DIR)/%.o: $(SRCS_DIR)/%.c
 clean: $(OBJS)
 	@rm -rf $(OBJS)
 	@clear
-	@echo "Object files removed!"
+	@echo "$(RED)Object files removed!$(NC)"
 
 fclean: $(NAME) $(OBJS)
 	@rm -rf $(OBJS) $(NAME)
 	@clear
-	@echo "Object files & $(NAME) removed!"
+	@echo "$(RED)Object files & $(NAME) removed!$(NC)"
 
-re:fclean
+re:
+	@rm -rf $(OBJS) $(NAME)
 	@make all
 	@clear
-	@echo "Rebuild completed!"
+	@echo "$(GREEN)Rebuild completed!$(NC)"
 
 PHONY: all clean fclean re
