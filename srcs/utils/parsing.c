@@ -15,7 +15,7 @@
 int	check_limits(t_philo *phi)
 {
 	if ((phi->eat_quant > INT_MAX)
-		|| ((phi->eat_quant == 0 || phi->eat_quant < -1) && (phi->ac < 6)))
+		|| ((phi->eat_quant == 0 || phi->eat_quant <= 0) && (phi->six)))
 		return (0);
 	if (phi->sleep_time > INT_MAX || phi->sleep_time <= 0)
 		return (0);
@@ -79,6 +79,8 @@ void	print_philos(t_philo *philos)
 	printf("die time = %ld\n", philos->die_time);
 	printf("eat time = %ld\n", philos->eat_time);
 	printf("sleep time = %ld\n", philos->sleep_time);
-	if (philos->ac == 6)
+	if (philos->six == true)
 		printf("eat quant = %ld\n", philos->eat_quant);
+	else
+		printf("eat quant not given\n");
 }

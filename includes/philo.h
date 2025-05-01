@@ -25,7 +25,7 @@
 typedef struct s_philo
 {
 	int		id;
-	int		ac;
+	bool	six;
 	long	philos_count;
 	long	die_time;
 	long	eat_time;
