@@ -25,7 +25,7 @@
 typedef pthread_mutex_t	t_mtx;
 typedef struct s_table	t_table;
 
-typedef strcut s_fork
+typedef struct s_fork
 {
 	t_mtx	fork;
 	int		fork_id;
@@ -53,7 +53,28 @@ typedef struct s_table
 	bool		startd;
 	bool		ended;
 	t_fork		*forks;
-	t_philos	*philos;
+	t_philo		*philos;
 }	t_table;
+
+//parsing.c
+void	parsing(char **av, int ac);
+
+//exit.c
+void	exit_code(int code, char *message);
+
+//init.c
+void	init_table(t_table *table, char **av, int ac);
+
+//utils.c
+long	ft_atol(char *str);
+int		is_digit(char c);
+int		is_space(char c);
+
+// MESSAGES
+# define ARG_1       "Usage: $> ./philo \"number of philosofers\" "
+# define ARG_2       "\"time to die\" \"time to eat\" \"time to sleep\" "
+# define ARG_3       "\"number of times each philosofer must eat (optional)\"\n"
+# define LIMITS      "Only positive numbers within int limits are allowed!\n"
+# define INVALID_ARG "Only numeric arguments are allowed!\n"
 
 #endif

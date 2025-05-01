@@ -19,21 +19,10 @@ SRCS_DIR = ./srcs
 INCLUDES = ./includes/
 
 SRC= $(SRCS_DIR)/main.c \
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
-	 $(SRCS_DIR)/
+	 $(SRCS_DIR)/utils/utils.c \
+	 $(SRCS_DIR)/utils/parsing.c \
+	 $(SRCS_DIR)/utils/init.c \
+	 $(SRCS_DIR)/exit/exit.c \
 
 OBJS = $(SRC:.c=.o)
 
