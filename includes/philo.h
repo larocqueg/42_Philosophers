@@ -25,6 +25,17 @@
 typedef pthread_mutex_t	t_mtx;
 typedef struct s_table	t_table;
 
+typedef enum e_op
+{
+	LOCK,
+	UNLOCK,
+	INIT,
+	DESTROY,
+	CREATE,
+	JOIN,
+	DETACH,
+}	t_op;
+
 typedef struct s_fork
 {
 	t_mtx	fork;
@@ -83,5 +94,6 @@ int		is_space(char c);
 # define LIMITS       "Only positive numbers within int limits are allowed!\n"
 # define INVALID_ARG  "Only numeric arguments are allowed!\n"
 # define MALLOC_ERROR "No avaiable memory on your system! Malloc error!\n"
+# define ENUM_ERROR   "Wrong operation code given to mutex!\n"
 
 #endif

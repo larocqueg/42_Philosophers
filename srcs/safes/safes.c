@@ -21,3 +21,17 @@ void	*safe_malloc(size_t bytes)
 		exit_code(1, MALLOC_ERROR);
 	return (dest);
 }
+
+void	safe_mutex(t_mtx *mutex, t_op op)
+{
+	if (op == LOCK)
+		pthrear_mutex_lock();
+	else if (op == UNLOCK)
+		pthread_mutex_unlock();
+	else if (op == INIT)
+		pthread_mutex_init();
+	else if (op == DESTROY)
+		pthread_mutex_destroy();
+	else
+		exit_code(1, ENUM_ERROR);
+}
