@@ -65,16 +65,23 @@ void	exit_code(int code, char *message);
 //init.c
 void	init_table(t_table *table, char **av, int ac);
 
+//safes.c
+void	*safe_malloc(size_t bytes);
+
+//free.c
+void	clean_table(t_table *table);
+
 //utils.c
 long	ft_atol(char *str);
 int		is_digit(char c);
 int		is_space(char c);
 
 // MESSAGES
-# define ARG_1       "Usage: $> ./philo \"number of philosofers\" "
-# define ARG_2       "\"time to die\" \"time to eat\" \"time to sleep\" "
-# define ARG_3       "\"number of times each philosofer must eat (optional)\"\n"
-# define LIMITS      "Only positive numbers within int limits are allowed!\n"
-# define INVALID_ARG "Only numeric arguments are allowed!\n"
+# define ARG_1        "Usage: $> ./philo \"number of philos\" "
+# define ARG_2        "\"time to die\" \"time to eat\" \"time to sleep\" "
+# define ARG_3        "\"number of times each philos must eat (optional)\"\n"
+# define LIMITS       "Only positive numbers within int limits are allowed!\n"
+# define INVALID_ARG  "Only numeric arguments are allowed!\n"
+# define MALLOC_ERROR "No avaiable memory on your system! Malloc error!\n"
 
 #endif

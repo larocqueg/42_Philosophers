@@ -30,8 +30,8 @@ int	main(int ac, char **av)
 		parsing(av, ac);
 		init_table(&table, av, ac);
 		print_args(&table);
-		//start_table(&table);
-		//clean_table(&table);
+		//init_table(&table);
+		clean_table(&table);
 		return (0);
 	}
 	printf("%s%s%s", ARG_1, ARG_2, ARG_3);

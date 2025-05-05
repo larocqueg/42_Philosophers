@@ -23,6 +23,8 @@ SRC= $(SRCS_DIR)/main.c \
 	 $(SRCS_DIR)/utils/parsing.c \
 	 $(SRCS_DIR)/utils/init.c \
 	 $(SRCS_DIR)/exit/exit.c \
+	 $(SRCS_DIR)/safes/safes.c \
+	 $(SRCS_DIR)/safes/free.c \
 
 OBJS = $(SRC:.c=.o)
 
