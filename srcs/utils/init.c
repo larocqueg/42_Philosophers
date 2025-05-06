@@ -25,6 +25,6 @@ void	init_table(t_table *table, char **av, int ac)
 	table->eat_time = ft_atol(av[i--]);
 	table->die_time = ft_atol(av[i--]);
 	table->philos_count = ft_atol(av[i--]);
-	table->philos = safe_malloc(table->philos_count);
 	table->ended = false;
+	table->philos = safe_malloc(table->philos_count);
 }

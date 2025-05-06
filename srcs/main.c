@@ -30,7 +30,6 @@ int	main(int ac, char **av)
 		parsing(av, ac);
 		init_table(&table, av, ac);
 		print_args(&table);
-		//init_table(&table);
 		clean_table(&table);
 		return (0);
 	}

@@ -20,6 +20,7 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <pthread.h>
+# include <errno.h>
 # include <limits.h>
 
 typedef pthread_mutex_t	t_mtx;
@@ -95,5 +96,11 @@ int		is_space(char c);
 # define INVALID_ARG  "Only numeric arguments are allowed!\n"
 # define MALLOC_ERROR "No avaiable memory on your system! Malloc error!\n"
 # define ENUM_ERROR   "Wrong operation code given to mutex!\n"
+# define DEADLOCK     "A deadlock would occur if the thread "
+# define DEADLOCK2    "blocked waiting for mutex.\n"
+# define MUTEX        "The value specified by mutex is invalid.\n"
+# define ATTR         "The value specified by attr is invalid.\n"
+# define MEMORY       "The process cannot allocate enough memory.\n"
+# define MUTEX_LOCKED "Mutex is locked.\n"
 
 #endif
