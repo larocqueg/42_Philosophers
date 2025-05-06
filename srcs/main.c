@@ -34,6 +34,6 @@ int	main(int ac, char **av)
 		clean_table(&table);
 		return (0);
 	}
-	printf("%s%s%s", ARG_1, ARG_2, ARG_3);
+	printf(ARG_1 ARG_2 ARG_3);
 	return (1);
 }
