@@ -54,3 +54,14 @@ void	safe_mutex(t_mtx *mutex, t_op op)
 	else
 		exit_code(1, ENUM_ERROR);
 }
+
+static void	thread_erro(int status, t_op op)
+{
+	if (status == 0)
+		return ;
+	else if ()
+}
+
+void	safe_thread(pthread_t *thread, void*(*f)(void *))
+{
+}
